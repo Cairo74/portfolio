@@ -53,3 +53,4 @@
   <text x="405" y="320" fill="#71717a" font-family="JetBrains Mono, monospace" font-size="11">✓ Random Forest &amp; XGBoost Classifier</text>
   <text x="405" y="345" fill="#71717a" font-family="JetBrains Mono, monospace" font-size="11">✓ F1-Score: 0.94 | Precision: 0.95</text>
 </svg>
+

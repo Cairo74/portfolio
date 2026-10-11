@@ -1,45 +1,60 @@
 import { useState } from "react";
 import Header from "@/components/Header";
-import LiquidMetalHero from "@/components/ui/liquid-metal-hero";
+import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Projects from "@/components/Projects";
+import Education from "@/components/Education";
 import Experiences from "@/components/Experiences";
+import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import type { Lang } from "@/data";
 
-const go = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+const scrollTo = (id: string) => {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+};
 
 export default function App() {
   const [lang, setLang] = useState<Lang>("pt");
-  const pt = lang === "pt";
+  const isPt = lang === "pt";
 
   return (
-    <>
+    <div className="min-h-screen bg-black text-white antialiased">
       <Header lang={lang} setLang={setLang} />
+
       <main>
-        <LiquidMetalHero
-          badge={pt ? "✨ Disponível para novas oportunidades" : "✨ Open to new opportunities"}
-          title="Cairo Rezende"
-          subtitle={
-            pt
-              ? "Desenvolvedor apaixonado por experiências de usuário fluidas, Inteligência Artificial e Dados. Estudante de Engenharia de Software na PUC Minas."
-              : "Developer passionate about fluid user experiences, Artificial Intelligence and Data. Software Engineering student at PUC Minas."
+        <Hero
+          name="Cairo Rodrigues Rezende"
+          role={
+            isPt
+              ? "Engenharia de Software · PUC Minas | Técnico TI · COTEMIG"
+              : "Software Engineering · PUC Minas | IT Technical · COTEMIG"
           }
-          primaryCtaLabel={pt ? "Ver projetos" : "View projects"}
-          secondaryCtaLabel={pt ? "Entrar em contato" : "Get in touch"}
-          onPrimaryCtaClick={() => go("projetos")}
-          onSecondaryCtaClick={() => go("contato")}
-          features={["React · Next.js · Flutter", pt ? "IA & Machine Learning" : "AI & Machine Learning", pt ? "Análise de Dados" : "Data Analysis"]}
+          subtitle={
+            isPt
+              ? "Desenvolvedor focado em criar experiências digitais fluidas e intuitivas, com atuação em desenvolvimento Web, Mobile, Inteligência Artificial e Análise de Dados."
+              : "Developer focused on building fluid, intuitive digital experiences, with experience across Web, Mobile, Artificial Intelligence, and Data Analysis."
+          }
+          primaryCtaLabel={isPt ? "Ver projetos" : "View projects"}
+          secondaryCtaLabel={isPt ? "Entrar em contato" : "Get in touch"}
+          onPrimaryCtaClick={() => scrollTo("projetos")}
+          onSecondaryCtaClick={() => scrollTo("contato")}
+          features={[
+            "React · Next.js · TypeScript",
+            "Flutter · Mobile",
+            "Python · Machine Learning",
+            "SQL · Análise de Dados",
+          ]}
         />
+
         <About lang={lang} />
-        <Projects lang={lang} />
+        <Education lang={lang} />
         <Experiences lang={lang} />
+        <Projects lang={lang} />
         <Contact lang={lang} />
       </main>
-      <footer className="border-t border-white/10 py-8 text-center font-mono text-xs text-zinc-500">
-        © {new Date().getFullYear()} Cairo Rodrigues Rezende · {pt ? "Feito com React, Tailwind e shaders WebGL" : "Built with React, Tailwind and WebGL shaders"}
+
+      <footer className="border-t border-white/10 bg-black py-8 text-center text-xs text-zinc-500">
+        Cairo Rodrigues Rezende
       </footer>
-    </>
+    </div>
   );
 }
-
