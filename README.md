@@ -11,7 +11,7 @@ Portfólio profissional desenvolvido para o **Laboratório 01** da disciplina **
 ---
 
 ## 🔗 Links Úteis
-* **Site Publicado:** [Deploy na Vercel](https://cairo-portfolio.vercel.app) *(ou link do seu deploy)*
+* **Site Publicado:** [Deploy na Vercel](https://cairodev.vercel.app)
 * **Repositório GitHub:** [https://github.com/Cairo74/portfolio](https://github.com/Cairo74/portfolio)
 
 ---
