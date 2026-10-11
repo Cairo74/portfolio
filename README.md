@@ -6,7 +6,7 @@ Portfólio profissional desenvolvido para o **Laboratório 01** da disciplina **
 
 ## 📸 Demonstração da Interface
 
-![Interface do Portfólio](src/components/images/preview.png)
+![Interface do Portfólio](src/components/images/print%20portfolio.png)
 
 ---
 
