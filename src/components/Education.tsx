@@ -62,3 +62,4 @@ export default function Education({ lang }: { lang: Lang }) {
     </section>
   );
 }
+

@@ -23,26 +23,16 @@ export default function App() {
       <main>
         <Hero
           name="Cairo Rodrigues Rezende"
-          role={
-            isPt
-              ? "Engenharia de Software · PUC Minas | Técnico TI · COTEMIG"
-              : "Software Engineering · PUC Minas | IT Technical · COTEMIG"
-          }
           subtitle={
             isPt
-              ? "Desenvolvedor focado em criar experiências digitais fluidas e intuitivas, com atuação em desenvolvimento Web, Mobile, Inteligência Artificial e Análise de Dados."
-              : "Developer focused on building fluid, intuitive digital experiences, with experience across Web, Mobile, Artificial Intelligence, and Data Analysis."
+              ? "Desenvolvedor focado em criar experiências digitais fluidas e intuitivas, com sólida atuação em desenvolvimento Web, Inteligência Artificial e Análise de Dados."
+              : "Developer focused on crafting fluid and intuitive digital experiences, with solid expertise across Web development, Artificial Intelligence, and Data Analysis."
           }
           primaryCtaLabel={isPt ? "Ver projetos" : "View projects"}
           secondaryCtaLabel={isPt ? "Entrar em contato" : "Get in touch"}
           onPrimaryCtaClick={() => scrollTo("projetos")}
           onSecondaryCtaClick={() => scrollTo("contato")}
-          features={[
-            "React · Next.js · TypeScript",
-            "Flutter · Mobile",
-            "Python · Machine Learning",
-            "SQL · Análise de Dados",
-          ]}
+          tags={["Data Analytics", "Data Science", "Developer"]}
         />
 
         <About lang={lang} />

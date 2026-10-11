@@ -1,89 +1,87 @@
 import { motion } from "framer-motion";
 
 interface HeroProps {
-  name: string;
-  role: string;
+  name?: string;
   subtitle: string;
   primaryCtaLabel: string;
   secondaryCtaLabel?: string;
   onPrimaryCtaClick: () => void;
   onSecondaryCtaClick?: () => void;
-  features?: string[];
+  tags?: string[];
 }
 
 export default function Hero({
-  name,
-  role,
   subtitle,
   primaryCtaLabel,
   secondaryCtaLabel,
   onPrimaryCtaClick,
   onSecondaryCtaClick,
-  features = [],
+  tags = ["Data Analytics", "Data Science", "Developer"],
 }: HeroProps) {
-  const container = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.12 } },
-  };
-  const item = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } };
-
   return (
-    <section id="home" className="relative flex min-h-[92vh] items-center justify-center border-b border-white/10 bg-gradient-to-b from-zinc-950 via-zinc-900 to-black px-6 pt-24 pb-16">
-      <div className="relative z-10 mx-auto w-full max-w-4xl text-center">
-        <motion.div
-          className="space-y-6"
-          variants={container}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 0.6 }}
-        >
-          <motion.div variants={item}>
-            <span className="inline-block rounded-full border border-white/15 bg-white/5 px-4 py-1.5 font-mono text-xs uppercase tracking-wider text-zinc-300">
-              {role}
-            </span>
+    <section
+      id="home"
+      className="relative flex min-h-[85vh] items-center border-b border-white/10 bg-gradient-to-b from-zinc-950 via-zinc-900 to-black px-6 pt-24 pb-16"
+    >
+      <div className="mx-auto w-full max-w-6xl">
+        <div className="grid items-center gap-10 md:grid-cols-2 md:gap-14">
+          {/* Lado Esquerdo: Nome com destaque e autoridade */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col justify-center text-left"
+          >
+            <h1 className="text-5xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl leading-[1.08]">
+              Cairo
+              <br />
+              <span className="text-zinc-300">Rodrigues</span>
+              <br />
+              <span className="text-zinc-500">Rezende</span>
+            </h1>
+
+            {/* Tags de foco profissional solicitadas */}
+            <div className="mt-6 flex flex-wrap gap-2">
+              {tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-white/15 bg-white/5 px-3 py-1 font-mono text-xs font-medium text-zinc-300"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           </motion.div>
 
-          <motion.div className="space-y-4" variants={item}>
-            <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-6xl md:text-7xl">
-              {name}
-            </h1>
-            <p className="mx-auto max-w-2xl text-base leading-relaxed text-zinc-300 sm:text-lg">
+          {/* Lado Direito: Descrição e Botões de ação */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="flex flex-col justify-center text-left space-y-7 md:border-l md:border-white/10 md:pl-10"
+          >
+            <p className="text-lg leading-relaxed text-zinc-300 sm:text-xl">
               {subtitle}
             </p>
-          </motion.div>
 
-          <motion.div className="flex flex-col items-center justify-center gap-3.5 sm:flex-row" variants={item}>
-            <button
-              onClick={onPrimaryCtaClick}
-              className="inline-flex h-11 min-w-44 items-center justify-center rounded-lg bg-white px-6 font-semibold text-zinc-950 transition-all hover:bg-zinc-200 active:scale-95"
-            >
-              {primaryCtaLabel}
-            </button>
-            {secondaryCtaLabel && onSecondaryCtaClick && (
+            <div className="flex flex-wrap items-center gap-4 pt-2">
               <button
-                onClick={onSecondaryCtaClick}
-                className="inline-flex h-11 min-w-44 items-center justify-center rounded-lg border border-white/20 bg-white/5 px-6 font-semibold text-white transition-all hover:bg-white/10 active:scale-95"
+                onClick={onPrimaryCtaClick}
+                className="inline-flex h-12 items-center justify-center rounded-lg bg-white px-7 font-semibold text-zinc-950 transition-all hover:bg-zinc-200 active:scale-95"
               >
-                {secondaryCtaLabel}
+                {primaryCtaLabel}
               </button>
-            )}
+              {secondaryCtaLabel && onSecondaryCtaClick && (
+                <button
+                  onClick={onSecondaryCtaClick}
+                  className="inline-flex h-12 items-center justify-center rounded-lg border border-white/20 bg-white/5 px-7 font-semibold text-white transition-all hover:bg-white/10 active:scale-95"
+                >
+                  {secondaryCtaLabel}
+                </button>
+              )}
+            </div>
           </motion.div>
-
-          {features.length > 0 && (
-            <motion.div className="pt-8" variants={item}>
-              <div className="mx-auto flex flex-wrap items-center justify-center gap-3">
-                {features.map((f) => (
-                  <span
-                    key={f}
-                    className="rounded-md border border-white/10 bg-zinc-900/80 px-3.5 py-1.5 font-mono text-xs text-zinc-300"
-                  >
-                    {f}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          )}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
