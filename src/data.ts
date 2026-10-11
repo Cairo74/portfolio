@@ -91,7 +91,6 @@ export interface Project {
   image: string;
 }
 
-/** Ordenados do mais antigo ao mais recente (requisito do laboratório). */
 export const projects: Project[] = [
   {
     name: "IA para Análise de Dados",

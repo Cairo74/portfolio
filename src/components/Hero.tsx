@@ -25,7 +25,6 @@ export default function Hero({
     >
       <div className="mx-auto w-full max-w-6xl">
         <div className="grid items-center gap-10 md:grid-cols-2 md:gap-14">
-          {/* Lado Esquerdo: Nome com destaque e autoridade */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -40,7 +39,6 @@ export default function Hero({
               <span className="text-zinc-500">Rezende</span>
             </h1>
 
-            {/* Tags de foco profissional solicitadas */}
             <div className="mt-6 flex flex-wrap gap-2">
               {tags.map((tag) => (
                 <span
@@ -53,7 +51,6 @@ export default function Hero({
             </div>
           </motion.div>
 
-          {/* Lado Direito: Descrição e Botões de ação */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
