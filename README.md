@@ -4,9 +4,15 @@ Portfólio profissional desenvolvido para o **Laboratório 01** da disciplina **
 
 ---
 
-## 🔗 Link de Acesso na Nuvem
+## 📸 Demonstração da Interface
+
+![Interface do Portfólio](src/components/images/preview.png)
+
+---
+
+## 🔗 Links Úteis
 * **Site Publicado:** [Deploy na Vercel](https://cairo-portfolio.vercel.app) *(ou link do seu deploy)*
-* **Repositório GitHub:** [github.com/Cairo74](https://github.com/Cairo74)
+* **Repositório GitHub:** [https://github.com/Cairo74/portfolio](https://github.com/Cairo74/portfolio)
 
 ---
 
@@ -36,6 +42,8 @@ Lab1 - Portfolio/
 │       └── flya.svg
 ├── src/
 │   ├── components/
+│   │   ├── images/            # Capturas de tela e assets de documentação
+│   │   │   └── preview.png
 │   │   ├── Header.tsx         # Menu de navegação e alternância PT/EN
 │   │   ├── Hero.tsx           # Apresentação inicial (layout bipartido)
 │   │   ├── About.tsx          # Seção Sobre Mim
@@ -63,8 +71,8 @@ Lab1 - Portfolio/
 
 ### 1. Clonar o repositório e instalar dependências
 ```bash
-git clone https://github.com/Cairo74/cairo-portfolio.git
-cd cairo-portfolio
+git clone https://github.com/Cairo74/portfolio.git
+cd portfolio
 npm install
 ```
 
@@ -84,7 +92,7 @@ npm run preview
 
 ## 📑 Seções do Sistema
 
-1. **Sobre Mim:** Apresentação em português e inglês com formação, áreas de interesse e foco profissional.
+1. **Sobre Mim:** Apresentação em português e inglês com trajetória pessoal e competências.
 2. **Formação:** Graduação em Engenharia de Software (PUC Minas) e Ensino Médio Técnico em TI (COTEMIG).
 3. **Experiências:** Histórico profissional na MRV (Análise de Dados), KXP Tech (Desenvolvimento Flutter) e projetos Freelancer.
 4. **Projetos:** Linha do tempo cronológica com imagens de funcionamento, descrição, tecnologias e link para o GitHub.
