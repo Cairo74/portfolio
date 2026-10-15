@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#09090c" />
+      <stop offset="100%" stop-color="#000000" />
+    </linearGradient>
+
+    <!-- Liquid Chrome Gradient -->
+    <linearGradient id="chrome1" x1="12" y1="10" x2="52" y2="54" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="20%" stop-color="#f1f5f9" />
+      <stop offset="45%" stop-color="#94a3b8" />
+      <stop offset="70%" stop-color="#ffffff" />
+      <stop offset="90%" stop-color="#475569" />
+      <stop offset="100%" stop-color="#cbd5e1" />
+    </linearGradient>
+
+    <!-- Chrome Specular Glow -->
+    <linearGradient id="specular" x1="14" y1="12" x2="48" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="50%" stop-color="#e0f2fe" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.1" />
+    </linearGradient>
+
+    <!-- Neon Rim Ambient Light -->
+    <linearGradient id="rim" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.7" />
+      <stop offset="45%" stop-color="#818cf8" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.7" />
+    </linearGradient>
+
+    <!-- Radial Mercury Core -->
+    <radialGradient id="mercuryCore" cx="30" cy="26" r="20" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="35%" stop-color="#e2e8f0" />
+      <stop offset="70%" stop-color="#64748b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </radialGradient>
+  </defs>
+
+  <!-- Squircle Base with Metallic Rim -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#bg)" stroke="url(#rim)" stroke-width="1.8" />
+  <rect x="3.5" y="3.5" width="57" height="57" rx="14.5" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+
+  <!-- Fluid Liquid Metal Monogram: Dynamic C-R chrome loop -->
+  <!-- Subtle shadow for depth -->
+  <path d="M46 20C50 25 51 32 49 39C46 47 38 52 29 52C19 52 12 44 12 33C12 22 20 14 30 13C37 12 43 15 47 21C50 27 47 34 40 37C34 40 27 37 24 31C22 25 26 19 32 18" 
+        stroke="#000000" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" />
+
+  <!-- Main Chrome Fluid Body -->
+  <path d="M46 20C50 25 51 32 49 39C46 47 38 52 29 52C19 52 12 44 12 33C12 22 20 14 30 13C37 12 43 15 47 21C50 27 47 34 40 37C34 40 27 37 24 31C22 25 26 19 32 18" 
+        stroke="url(#chrome1)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Specular Reflection Highlight -->
+  <path d="M44 21C47 26 48 31 46 36M28 15C20 17 15 24 15 32C15 39 19 46 27 48" 
+        stroke="url(#specular)" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Floating Liquid Mercury Droplet -->
+  <circle cx="33" cy="27" r="4.2" fill="url(#mercuryCore)" stroke="#ffffff" stroke-width="1.2" />
+  <circle cx="31.8" cy="25.5" r="1.3" fill="#ffffff" />
+  
+  <!-- Glowing Cyan Tech Core -->
+  <circle cx="47.5" cy="46" r="3" fill="#38bdf8" />
+  <circle cx="47.5" cy="46" r="1.4" fill="#ffffff" />
+</svg>

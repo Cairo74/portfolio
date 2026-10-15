@@ -4,14 +4,16 @@ export const about = {
   pt: {
     title: "Minha trajetória",
     paragraphs: [
-      "Olá, meu nome é Cairo Rodrigues Rezende, um apaixonado por tecnologia e atualmente estudante de Ensino Médio Técnico no Colégio COTEMIG, onde estou aprofundando minhas habilidades no mundo dev. Desde cedo, a inovação e o universo digital me fascinam, e essa curiosidade natural me levou a trilhar um caminho como desenvolvedor, buscando sempre aprimorar minhas habilidades e conhecimentos para estar à altura dos desafios do setor.",
-      "Durante minha jornada como desenvolvedor, solidifiquei minha paixão por criar experiências de usuário fluidas e intuitivas, e tenho um grande amor por Inteligência Artificial e Dados, áreas em que estou sempre estudando e desenvolvendo projetos para aplicar soluções inteligentes a problemas do mundo real.",
-      "Com uma abordagem profissional, sou uma pessoa dedicada e organizada, valorizando a eficiência e a qualidade em tudo o que faço. Busco entregar soluções que vão além das expectativas e que contribuam para a criação de experiências digitais incríveis. Estou em busca de uma oportunidade para colocar em prática minhas habilidades, colaborar com pessoas talentosas e contribuir para projetos inovadores que tragam impacto positivo.",
-      "No meu tempo livre, gosto de me desconectar um pouco e praticar esportes ao ar livre, como basquete e ciclismo. Essa combinação entre tecnologia e atividades físicas me ajuda a manter o equilíbrio e a energia para encarar qualquer projeto com foco e disposição. Espero fazer parte de uma equipe divertida e ambiciosa, onde posso crescer ao lado de pessoas que compartilham da mesma paixão por tecnologia e inovação.",
+      "Olá, meu nome é Cairo Rodrigues Rezende, tenho 19 anos e sou estudante de Engenharia de Software na PUC Minas, com formação técnica em TI pelo Colégio COTEMIG. Desde cedo, o universo da tecnologia e da inovação me fascinam, motivando-me a construir uma trajetória sólida e prática em desenvolvimento e análise de dados.",
+      "Atualmente, atuo no mercado como aprendiz na área de Análise de Dados, aplicando métodos analíticos e engenharia para apoiar decisões estratégicas e otimizar processos. Tenho grande entusiasmo por Inteligência Artificial e Ciência de Dados, áreas em que estou constantemente desenvolvendo projetos e aplicando soluções inteligentes a desafios reais.",
+      "Com uma postura dedicada, organizada e orientada a resultados, prezo pelo rigor técnico e pela eficiência em cada entrega. Busco criar soluções digitais que unam performance, usabilidade e inteligência analítica, sempre aberto a colaborar em times dinâmicos e inovadores.",
+      "No meu tempo livre, gosto de me desconectar e praticar esportes ao ar livre, como basquete e ciclismo. Essa dinâmica mantém meu foco e energia alinhados para encarar novos desafios tecnológicos com entusiasmo e disciplina.",
     ],
     facts: [
+      ["Idade", "19 anos"],
       ["Graduação", "Engenharia de Software — PUC Minas (em andamento)"],
-      ["Técnico", "Ensino Médio Técnico em TI — COTEMIG"],
+      ["Técnico", "Técnico em TI — COTEMIG (concluído)"],
+      ["Atuação", "Aprendiz em Análise de Dados"],
       ["Idiomas", "Português (nativo) · Inglês (fluente)"],
       ["Local", "Belo Horizonte e Região, MG"],
     ],
@@ -19,14 +21,16 @@ export const about = {
   en: {
     title: "My journey",
     paragraphs: [
-      "Hello, my name is Cairo Rodrigues Rezende, passionate about technology and currently a Technical High School student at Colégio COTEMIG, where I am deepening my skills in the software development world. Since an early age, innovation and the digital universe have fascinated me, and this natural curiosity led me to pursue a path as a developer, always striving to improve my skills and knowledge to meet industry challenges.",
-      "Throughout my journey as a developer, I solidified my passion for creating fluid and intuitive user experiences, and I have a great love for Artificial Intelligence and Data, fields where I am constantly studying and developing projects to apply smart solutions to real-world problems.",
-      "With a professional approach, I am dedicated and organized, valuing efficiency and quality in everything I do. I strive to deliver solutions that exceed expectations and contribute to creating incredible digital experiences. I am seeking an opportunity to put my skills into practice, collaborate with talented people, and contribute to innovative projects that make a positive impact.",
-      "In my free time, I like to disconnect and practice outdoor sports like basketball and cycling. This balance between technology and physical activity helps me maintain the focus and energy needed to face any project with enthusiasm. I look forward to joining a fun and ambitious team where I can grow alongside people who share the same passion for technology and innovation.",
+      "Hello, my name is Cairo Rodrigues Rezende. I'm 19 years old, currently pursuing a Bachelor's degree in Software Engineering at PUC Minas, and hold an IT Technical degree from Colégio COTEMIG. From an early age, technology and digital innovation have inspired me to build a strong practical foundation in software development and data analytics.",
+      "I currently work as a Data Analysis Apprentice, leveraging analytical methods and software tools to support strategic decision-making and operational efficiency. I'm deeply passionate about Artificial Intelligence and Data Science, constantly building hands-on projects that translate intelligent solutions into real-world value.",
+      "With a dedicated, organized, and results-driven approach, I emphasize technical quality and efficiency in every project. I aim to create digital experiences that merge high performance, intuitive interfaces, and analytical depth, always eager to collaborate in dynamic and ambitious teams.",
+      "In my free time, I like to disconnect and enjoy outdoor sports like basketball and cycling. This balance keeps my energy high and my mind sharp to tackle complex engineering challenges with focus and discipline.",
     ],
     facts: [
+      ["Age", "19 years old"],
       ["Degree", "Software Engineering — PUC Minas (in progress)"],
-      ["Technical", "IT Technical High School — COTEMIG"],
+      ["Technical", "IT Technical High School — COTEMIG (completed)"],
+      ["Current Role", "Data Analysis Apprentice"],
       ["Languages", "Portuguese (native) · English (fluent)"],
       ["Location", "Minas Gerais, Brazil"],
     ],
@@ -166,9 +170,48 @@ export const experiences: Experience[] = [
 
 export const skills = [
   "Python", "SQL", "Java", "JavaScript", "TypeScript", "Flutter", "Kotlin", "Swift", "C#",
-  "React", "Next.js", "NestJS", "scikit-learn", "TensorFlow", "PyTorch", "Hugging Face",
+  "React", "Next.js", "NestJS", "scikit-learn", "Hugging Face",
   "MySQL", "SQL Server", "GCP", "Power BI", "Tableau", "Docker", "Git", "Figma",
 ];
+
+const dv = (name: string, variant = "original") =>
+  `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${name}/${name}-${variant}.svg`;
+const si = (slug: string, hex: string) => `https://cdn.simpleicons.org/${slug}/${hex}`;
+
+export interface Tech {
+  name: string;
+  logo: string;
+}
+
+export const techStack: { row1: Tech[]; row2: Tech[] } = {
+  row1: [
+    { name: "Python", logo: dv("python") },
+    { name: "SQL", logo: "" },
+    { name: "Java", logo: dv("java") },
+    { name: "JavaScript", logo: dv("javascript") },
+    { name: "TypeScript", logo: dv("typescript") },
+    { name: "Flutter", logo: dv("flutter") },
+    { name: "Kotlin", logo: dv("kotlin") },
+    { name: "Swift", logo: dv("swift") },
+    { name: "C#", logo: dv("csharp") },
+    { name: "React", logo: dv("react") },
+    { name: "Next.js", logo: "https://cdn.simpleicons.org/nextdotjs/ffffff" },
+    { name: "NestJS", logo: dv("nestjs") },
+  ],
+  row2: [
+    { name: "scikit-learn", logo: dv("scikitlearn") },
+    { name: "Hugging Face", logo: si("huggingface", "FFD21E") },
+    { name: "MySQL", logo: dv("mysql") },
+    { name: "SQL Server", logo: dv("microsoftsqlserver", "plain") },
+    { name: "GCP", logo: dv("googlecloud") },
+    { name: "Power BI", logo: "https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" },
+    { name: "Tableau", logo: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png" },
+    { name: "Docker", logo: dv("docker") },
+    { name: "Git", logo: dv("git") },
+    { name: "Figma", logo: dv("figma") },
+  ],
+};
+
 
 export const contact = {
   email: "cairowork.dev@gmail.com",

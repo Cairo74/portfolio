@@ -1,11 +1,32 @@
 import { motion } from "framer-motion";
 import { experiences, type Lang } from "@/data";
 import { Briefcase } from "lucide-react";
+import LiquidMetalBlob from "@/components/ui/LiquidMetalBlob";
 
 export default function Experiences({ lang }: { lang: Lang }) {
   return (
-    <section id="experiencias" className="border-b border-white/10 bg-black">
-      <div className="mx-auto max-w-5xl px-6 py-24">
+    <section id="experiencias" className="relative overflow-hidden border-b border-white/10 bg-black">
+      {/* Ambient background liquid metal blob */}
+      <LiquidMetalBlob
+        size={520}
+        className="right-[-8%] top-[20%]"
+        duration={28}
+        speed={0.24}
+        scale={0.72}
+        opacity={0.55}
+        distortion={0.13}
+        shiftRed={0.22}
+        shiftBlue={0.28}
+        path={{
+          x: [0, -140, -50, -170, -30, 0],
+          y: [0, 80, 160, 40, -50, 0],
+          rotate: [0, 90, 180, 270, 360],
+          scale: [1, 1.1, 0.95, 1.05, 1],
+        }}
+      />
+      <div className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
+
+      <div className="relative z-10 mx-auto max-w-5xl px-6 py-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -27,7 +48,7 @@ export default function Experiences({ lang }: { lang: Lang }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="rounded-xl border border-white/10 bg-zinc-950 p-6 transition-colors hover:border-white/20"
+                className="rounded-2xl border border-white/10 bg-zinc-950/80 p-6 transition-all duration-300 hover:border-white/25 hover:bg-zinc-900/40 hover:shadow-xl hover:shadow-black/60"
               >
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <div className="flex items-center gap-2.5">

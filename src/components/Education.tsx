@@ -1,11 +1,32 @@
 import { motion } from "framer-motion";
 import { educations, type Lang } from "@/data";
 import { GraduationCap, Award } from "lucide-react";
+import LiquidMetalBlob from "@/components/ui/LiquidMetalBlob";
 
 export default function Education({ lang }: { lang: Lang }) {
   return (
-    <section id="formacao" className="border-b border-white/10 bg-zinc-950">
-      <div className="mx-auto max-w-5xl px-6 py-24">
+    <section id="formacao" className="relative overflow-hidden border-b border-white/10 bg-zinc-950">
+      {/* Ambient background liquid metal blob */}
+      <LiquidMetalBlob
+        size={500}
+        className="-left-16 top-[15%]"
+        duration={29}
+        speed={0.22}
+        scale={0.7}
+        opacity={0.5}
+        distortion={0.12}
+        shiftRed={0.28}
+        shiftBlue={0.2}
+        path={{
+          x: [0, 150, 70, 190, 40, 0],
+          y: [0, 90, 170, 60, -30, 0],
+          rotate: [0, 80, 170, 270, 360],
+          scale: [1, 1.12, 0.94, 1.06, 1],
+        }}
+      />
+      <div className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-zinc-950/60 via-zinc-950/40 to-zinc-950/80" />
+
+      <div className="relative z-10 mx-auto max-w-5xl px-6 py-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -27,7 +48,7 @@ export default function Education({ lang }: { lang: Lang }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="flex flex-col justify-between rounded-xl border border-white/10 bg-zinc-900/40 p-6 transition-all hover:border-white/20"
+                className="flex flex-col justify-between rounded-2xl border border-white/10 bg-zinc-900/40 p-6 transition-all duration-300 hover:border-white/25 hover:bg-zinc-900/70 hover:shadow-xl hover:shadow-black/60"
               >
                 <div>
                   <div className="flex items-center justify-between gap-3">

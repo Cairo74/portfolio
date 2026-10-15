@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import { Mail, Send } from "lucide-react";
 import { contact, type Lang } from "@/data";
+import LiquidMetalBlob from "@/components/ui/LiquidMetalBlob";
 
 interface FormData {
   name: string;
@@ -99,11 +100,31 @@ export default function Contact({ lang }: { lang: Lang }) {
   ];
 
   const field =
-    "w-full rounded-lg border border-white/15 bg-zinc-900/60 px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-zinc-500 focus:border-white/50";
+    "w-full rounded-xl border border-white/10 bg-zinc-900/60 px-4 py-3 text-sm text-white outline-none transition-all duration-200 placeholder:text-zinc-500 focus:border-white/40 focus:bg-zinc-900/90 focus:ring-1 focus:ring-white/20";
 
   return (
-    <section id="contato" className="bg-black">
-      <div className="mx-auto max-w-5xl px-6 py-24">
+    <section id="contato" className="relative overflow-hidden bg-black border-b border-white/10">
+      {/* Ambient background liquid metal blob */}
+      <LiquidMetalBlob
+        size={540}
+        className="right-[-10%] top-[18%]"
+        duration={27}
+        speed={0.22}
+        scale={0.72}
+        opacity={0.55}
+        distortion={0.14}
+        shiftRed={0.22}
+        shiftBlue={0.28}
+        path={{
+          x: [0, -150, -40, -190, -70, 0],
+          y: [0, 80, 180, 50, -60, 0],
+          rotate: [0, 85, 175, 260, 360],
+          scale: [1, 1.12, 0.94, 1.08, 1],
+        }}
+      />
+      <div className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
+
+      <div className="relative z-10 mx-auto max-w-5xl px-6 py-24">
         <span className="font-mono text-xs uppercase tracking-widest text-zinc-500">{t.kicker}</span>
         <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">{t.title}</h2>
         <p className="mt-2 text-sm text-zinc-400">{t.subtitle}</p>
@@ -117,7 +138,7 @@ export default function Contact({ lang }: { lang: Lang }) {
               rel="noreferrer"
               aria-label={i.label}
               title={i.label}
-              className="flex h-11 w-11 items-center justify-center rounded-lg border border-white/15 bg-zinc-900 text-zinc-300 transition hover:border-white/40 hover:text-white active:scale-95"
+              className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-zinc-900/70 text-zinc-400 transition-all duration-200 hover:border-white/30 hover:bg-zinc-800 hover:text-white hover:-translate-y-0.5 active:scale-95 shadow-sm"
             >
               {i.icon}
             </a>
@@ -172,7 +193,7 @@ export default function Contact({ lang }: { lang: Lang }) {
           <button
             type="submit"
             disabled={status === "sending"}
-            className="inline-flex h-11 items-center gap-2 rounded-lg bg-white px-6 font-semibold text-zinc-950 transition-all hover:bg-zinc-200 active:scale-95 disabled:opacity-50"
+            className="inline-flex h-11 items-center gap-2 rounded-xl bg-white px-7 font-semibold text-zinc-950 shadow-lg shadow-white/10 transition-all hover:bg-zinc-200 hover:shadow-white/20 active:scale-95 disabled:opacity-50"
           >
             <Send size={15} />
             {status === "sending" ? t.sending : t.send}

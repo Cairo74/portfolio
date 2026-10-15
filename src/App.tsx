@@ -1,7 +1,9 @@
 import { useState } from "react";
 import Header from "@/components/Header";
+import ScrollProgress from "@/components/ScrollProgress";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import TechCarousel from "@/components/TechCarousel";
 import Education from "@/components/Education";
 import Experiences from "@/components/Experiences";
 import Projects from "@/components/Projects";
@@ -18,6 +20,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-black text-white antialiased">
+      <ScrollProgress />
       <Header lang={lang} setLang={setLang} />
 
       <main>
@@ -36,6 +39,7 @@ export default function App() {
         />
 
         <About lang={lang} />
+        <TechCarousel lang={lang} />
         <Education lang={lang} />
         <Experiences lang={lang} />
         <Projects lang={lang} />
